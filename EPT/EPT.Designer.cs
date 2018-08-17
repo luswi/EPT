@@ -35,7 +35,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.zfdkTB = new System.Windows.Forms.TextBox();
             this.zdkTB = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -91,7 +91,7 @@
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
-            this.testTB = new System.Windows.Forms.TextBox();
+            this.cCalcTB = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -165,12 +165,12 @@
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 6;
             // 
-            // textBox8
+            // zfdkTB
             // 
-            this.textBox8.Location = new System.Drawing.Point(59, 470);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 7;
+            this.zfdkTB.Location = new System.Drawing.Point(59, 470);
+            this.zfdkTB.Name = "zfdkTB";
+            this.zfdkTB.Size = new System.Drawing.Size(100, 20);
+            this.zfdkTB.TabIndex = 7;
             // 
             // zdkTB
             // 
@@ -178,6 +178,7 @@
             this.zdkTB.Name = "zdkTB";
             this.zdkTB.Size = new System.Drawing.Size(100, 20);
             this.zdkTB.TabIndex = 8;
+            this.zdkTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.zdkTB_KeyPress);
             // 
             // textBox10
             // 
@@ -310,7 +311,7 @@
             this.groupBox1.Controls.Add(this.textBox10);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.zfdkTB);
             this.groupBox1.Controls.Add(this.textBox12);
             this.groupBox1.Controls.Add(this.textBox11);
             this.groupBox1.Controls.Add(this.textBox7);
@@ -527,7 +528,7 @@
             this.tabPage4.Controls.Add(this.textBox21);
             this.tabPage4.Controls.Add(this.textBox20);
             this.tabPage4.Controls.Add(this.textBox19);
-            this.tabPage4.Controls.Add(this.testTB);
+            this.tabPage4.Controls.Add(this.cCalcTB);
             this.tabPage4.Controls.Add(this.groupBox6);
             this.tabPage4.Controls.Add(this.groupBox5);
             this.tabPage4.Controls.Add(this.groupBox4);
@@ -686,13 +687,13 @@
             this.textBox19.Size = new System.Drawing.Size(100, 20);
             this.textBox19.TabIndex = 4;
             // 
-            // testTB
+            // cCalcTB
             // 
-            this.testTB.Location = new System.Drawing.Point(288, 42);
-            this.testTB.Name = "testTB";
-            this.testTB.ReadOnly = true;
-            this.testTB.Size = new System.Drawing.Size(100, 20);
-            this.testTB.TabIndex = 3;
+            this.cCalcTB.Location = new System.Drawing.Point(288, 42);
+            this.cCalcTB.Name = "cCalcTB";
+            this.cCalcTB.ReadOnly = true;
+            this.cCalcTB.Size = new System.Drawing.Size(100, 20);
+            this.cCalcTB.TabIndex = 3;
             // 
             // groupBox6
             // 
@@ -833,7 +834,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox zfdkTB;
         private System.Windows.Forms.TextBox zdkTB;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox11;
@@ -899,7 +900,7 @@
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox testTB;
+        private System.Windows.Forms.TextBox cCalcTB;
         private System.Windows.Forms.Button calculateBT;
     }
 }

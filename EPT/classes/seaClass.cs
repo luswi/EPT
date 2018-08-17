@@ -8,10 +8,15 @@ namespace EPT.classes
 {
     public class seaClass
     {
+        //---------------------------------
         // Variables used for calculations
+        //---------------------------------
         public double zdk { get; set; }
+        public double zfdk { get; set; }
+       
         
 
+        public double cCalc { get; set; }
 
         public bool seaCalculation(seaClass v)
         {
@@ -19,7 +24,8 @@ namespace EPT.classes
             if (1 > 0)
             {
                 isSuccess = true;
-                //here calc
+                // Here we starts calculations
+                cCalc = (zdk - zfdk) / 2.3;
             }
             else
             {
