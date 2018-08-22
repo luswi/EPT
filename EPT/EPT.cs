@@ -10,6 +10,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EPT.classes;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace EPT
 {
@@ -25,16 +27,6 @@ namespace EPT
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
         }
 
-        //
-        //
-        //
-
-
-
-
-
-
-        //
 
         //----------------------------------------------
         // Check if number and only one "." for input.
@@ -70,6 +62,15 @@ namespace EPT
                 }
             }
         }
+        //------------
+        // Protect 
+        //------------
+        private void zdkTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ProtectText(zdkTB, e);
+        }
+
+
 
 
         //-------------------
@@ -101,12 +102,40 @@ namespace EPT
             }
         }
 
-        private void zdkTB_KeyPress(object sender, KeyPressEventArgs e)
+
+
+        //--------------
+        // Save to XML
+        //--------------
+        private void saveXMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProtectText(zdkTB, e);
+            try
+            {
+                Information info = new Information();
+                
+                info.Data1 = cCalcTB.Text;
+                // -->
+
+                SaveXML.SaveData(info, "data.xml");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-       
-
+        //--------------------
+        // Load data at start
+        //--------------------
+        private void EPT_Load(object sender, EventArgs e)
+        {
+            if(File.Exists("data.xml"))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(Information));
+                FileStream read = new FileStream("data.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+                Information info = (Information)xs.Deserialize(read);
+                cCalcTB.Text = info.Data1;
+            }
+        }
     }
 }

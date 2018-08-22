@@ -102,6 +102,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl11.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -784,9 +785,18 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveXMLToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveXMLToolStripMenuItem
+            // 
+            this.saveXMLToolStripMenuItem.Name = "saveXMLToolStripMenuItem";
+            this.saveXMLToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.saveXMLToolStripMenuItem.Text = "Save XML";
+            this.saveXMLToolStripMenuItem.Click += new System.EventHandler(this.saveXMLToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -804,6 +814,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "EPT";
             this.Text = "Envelope Pressure Tool";
+            this.Load += new System.EventHandler(this.EPT_Load);
             this.tabControl11.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -902,6 +913,7 @@
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.TextBox cCalcTB;
         private System.Windows.Forms.Button calculateBT;
+        private System.Windows.Forms.ToolStripMenuItem saveXMLToolStripMenuItem;
     }
 }
 

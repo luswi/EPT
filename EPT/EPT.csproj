@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Information.cs" />
+    <Compile Include="classes\SaveXML.cs" />
     <Compile Include="classes\seaClass.cs" />
     <Compile Include="EPT.cs">
       <SubType>Form</SubType>
