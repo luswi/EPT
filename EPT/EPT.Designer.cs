@@ -49,8 +49,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.calculateBT = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.calculateBT = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -103,6 +103,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl11.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -279,16 +280,6 @@
             this.tabPage3.Text = "InputData";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // calculateBT
-            // 
-            this.calculateBT.Location = new System.Drawing.Point(187, 589);
-            this.calculateBT.Name = "calculateBT";
-            this.calculateBT.Size = new System.Drawing.Size(75, 23);
-            this.calculateBT.TabIndex = 21;
-            this.calculateBT.Text = "Calculate";
-            this.calculateBT.UseVisualStyleBackColor = true;
-            this.calculateBT.Click += new System.EventHandler(this.calculateBT_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.calculateBT);
@@ -322,6 +313,16 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parameters";
+            // 
+            // calculateBT
+            // 
+            this.calculateBT.Location = new System.Drawing.Point(187, 589);
+            this.calculateBT.Name = "calculateBT";
+            this.calculateBT.Size = new System.Drawing.Size(75, 23);
+            this.calculateBT.TabIndex = 21;
+            this.calculateBT.Text = "Calculate";
+            this.calculateBT.UseVisualStyleBackColor = true;
+            this.calculateBT.Click += new System.EventHandler(this.calculateBT_Click);
             // 
             // label17
             // 
@@ -535,7 +536,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(548, 630);
+            this.tabPage4.Size = new System.Drawing.Size(748, 702);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Output";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -746,7 +747,7 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(548, 630);
+            this.tabPage5.Size = new System.Drawing.Size(748, 702);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Results";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -756,7 +757,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(643, 668);
+            this.tabPage2.Size = new System.Drawing.Size(768, 740);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tanks";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -765,7 +766,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -792,6 +794,12 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.debugToolStripMenuItem.Text = "Debug";
             // 
             // EPT
             // 
@@ -902,6 +910,7 @@
         private System.Windows.Forms.TextBox cCalcTB;
         private System.Windows.Forms.Button calculateBT;
         private System.Windows.Forms.ToolStripMenuItem saveXMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
     }
 }
 
