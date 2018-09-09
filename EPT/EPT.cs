@@ -25,84 +25,33 @@ namespace EPT
             //------------------
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+
         }
 
 
-        //----------------------------------------------
-        // Check if number and only one "." for input.
-        //----------------------------------------------
-        private void ProtectText(TextBox txt, KeyPressEventArgs e)
+        
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
         {
-            bool IsNumber = false;
-            string text = txt.Text;
-            if(e.KeyChar=='\b')
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                if(!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-                else
-                {
-                    e.Handled = false;
-                    IsNumber = true;
-                }
-                if (!IsNumber)
-                {
-                    if(e.KeyChar.ToString() == ".")
-                    {
-                        if(text.IndexOf(".") == -1)
-                        {
-                            e.Handled = false;
-                        }
-                    }
-                }
-            }
+            modules.intro intro = new modules.intro();
+            intro.TopLevel = false;
+            intro.AutoScroll = true;
+            panelMain.Controls.Add(intro);
+            intro.Dock = DockStyle.Fill;
+            intro.Show();
         }
-        //------------
-        // Protect 
-        //------------
-        private void zdkTB_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void pressureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProtectText(zdkTB, e);
+            this.Controls.Clear();
+            modules.Pressure pressure = new modules.Pressure();
+            pressure.TopLevel = false;
+            pressure.AutoScroll = true;
+            this.Controls.Add(pressure);
+            this.Controls.Add(menuStrip);
+            pressure.Dock = DockStyle.Fill;
+            pressure.Show();
         }
-
-
-
-
-        //-------------------
-        // Main APP section
-        //-------------------
-
-        seaClass v = new seaClass();
-
-        private void calculateBT_Click(object sender, EventArgs e)
-        {
-            // Pick up values from textboxes
-            v.zdk = double.Parse(zdkTB.Text);
-            v.zfdk = double.Parse(zfdkTB.Text);
-            
-
-
-
-            // Results
-            bool success = v.seaCalculation(v);
-            if (success == true)
-            {
-                
-                cCalcTB.Text = Convert.ToString(v.cCalc);
-
-            }
-            else
-            {
-                MessageBox.Show("Something goes wrong!");
-            }
-        }
-
-
 
         //--------------
         // Save to XML
@@ -111,9 +60,9 @@ namespace EPT
         {
             try
             {
+
                 Information info = new Information();
-                
-                info.Data1 = cCalcTB.Text;
+                //info.Data1 = cCalcTB.Text;
                 // -->
 
                 SaveXML.SaveData(info, "data.xml");
@@ -124,18 +73,5 @@ namespace EPT
             }
         }
 
-        //--------------------
-        // Load data at start
-        //--------------------
-        private void EPT_Load(object sender, EventArgs e)
-        {
-            if(File.Exists("data.xml"))
-            {
-                XmlSerializer xs = new XmlSerializer(typeof(Information));
-                FileStream read = new FileStream("data.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
-                Information info = (Information)xs.Deserialize(read);
-                cCalcTB.Text = info.Data1;
-            }
-        }
     }
 }
