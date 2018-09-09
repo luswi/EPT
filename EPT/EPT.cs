@@ -62,7 +62,7 @@ namespace EPT
             {
 
                 Information info = new Information();
-                //info.Data1 = cCalcTB.Text;
+                ///info.Data1 = cCalcTB.Text;
                 // -->
 
                 SaveXML.SaveData(info, "data.xml");
