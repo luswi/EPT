@@ -48,11 +48,11 @@
     <Compile Include="classes\Information.cs" />
     <Compile Include="classes\SaveXML.cs" />
     <Compile Include="classes\seaClass.cs" />
-    <Compile Include="EPT.cs">
+    <Compile Include="RulesCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EPT.Designer.cs">
-      <DependentUpon>EPT.cs</DependentUpon>
+    <Compile Include="RulesCalculator.Designer.cs">
+      <DependentUpon>RulesCalculator.cs</DependentUpon>
     </Compile>
     <Compile Include="modules\intro.cs">
       <SubType>Form</SubType>
@@ -68,8 +68,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EPT.resx">
-      <DependentUpon>EPT.cs</DependentUpon>
+    <EmbeddedResource Include="RulesCalculator.resx">
+      <DependentUpon>RulesCalculator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modules\intro.resx">
       <DependentUpon>intro.cs</DependentUpon>

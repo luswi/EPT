@@ -13,11 +13,12 @@ using EPT.classes;
 using System.IO;
 using System.Xml.Serialization;
 
+
 namespace EPT
 {
-    public partial class EPT : Form
+    public partial class RulesCalculator : Form
     {
-        public EPT()
+        public RulesCalculator()
         {
             InitializeComponent();
             //------------------
@@ -28,8 +29,6 @@ namespace EPT
 
         }
 
-
-        
 
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
@@ -53,6 +52,8 @@ namespace EPT
             pressure.Show();
         }
 
+        
+
         //--------------
         // Save to XML
         //--------------
@@ -62,7 +63,8 @@ namespace EPT
             {
 
                 Information info = new Information();
-                ///info.Data1 = cCalcTB.Text;
+                //info.Data1 = cCalcTB.Text;
+                info.Data1 = modules.Pressure.SetValueForText1;
                 // -->
 
                 SaveXML.SaveData(info, "data.xml");
@@ -72,6 +74,7 @@ namespace EPT
                 MessageBox.Show(ex.Message);
             }
         }
+
 
     }
 }

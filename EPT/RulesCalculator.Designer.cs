@@ -1,6 +1,6 @@
 ﻿namespace EPT
 {
-    partial class EPT
+    partial class RulesCalculator
     {
         /// <summary>
         /// Required designer variable.
@@ -63,6 +63,7 @@
             this.saveXMLToolStripMenuItem.Name = "saveXMLToolStripMenuItem";
             this.saveXMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveXMLToolStripMenuItem.Text = "Save XML";
+            this.saveXMLToolStripMenuItem.Click += new System.EventHandler(this.saveXMLToolStripMenuItem_Click);
             // 
             // moduleToolStripMenuItem
             // 

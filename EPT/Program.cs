@@ -16,7 +16,7 @@ namespace EPT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EPT());
+            Application.Run(new RulesCalculator());
         }
     }
 }

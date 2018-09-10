@@ -63,7 +63,7 @@ namespace EPT.modules
         }
 
 
-
+        public static string SetValueForText1 = "";
 
         //-------------------
         // Main APP section
@@ -86,6 +86,13 @@ namespace EPT.modules
             {
 
                 cCalcTB.Text = Convert.ToString(v.cCalc);
+
+
+                SetValueForText1 = cCalcTB.Text;
+
+
+                //EPT frm2 = new EPT();
+                //frm2.Show();
 
             }
             else
@@ -145,7 +152,7 @@ namespace EPT.modules
                 {
 
                     Information info = new Information();
-                    //info.Data1 = cCalcTB.Text;
+                    info.Data1 = cCalcTB.Text;
                     // -->
 
                     SaveXML.SaveData(info, "data.xml");
